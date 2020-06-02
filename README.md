@@ -4,7 +4,7 @@
 
 **Funcionalidades:**
 a) O jogador deve poder escolher para onde quer ir ao escrever o comando.
-b) Há um tesouro que está escondido em algum lugar aleatório do mapa que não contenha outros itens.. Este local poderá ser diferente á cada novo jogo
+b) Há um tesouro que surgirá a partir do terceiro movimento do jogador e estará escondido em algum lugar aleatório do mapa que não contenha outros itens. Este local poderá ser diferente á cada novo jogo.
 c) Há um monstro na dungeon que aparece em um local aleatório na dungeon, desde que não seja no mesmo local do jogador.
 d) O monstro deverá começar a se movimentar pela dungeon a partir do terceiro movimento do jogador.
 e) O jogador possui uma quantidade de vida de 10 pontos e faz 1 ponto de dano desarmado.
