@@ -22,4 +22,5 @@ m) Haverá uma pontuação para o jogador que será informada no final do jogo e
     *Cada item encontrado (ponto positivo ou zero)
 n) Ao retornar à entrada da dungeon, o jogador deve ser questionado se está desejando sair dela. Caso saia da dungeon, o jogo acaba.
 o) Caso o personagem morra ou o jogador saia da dungeon sem o tesouro, o jogador perde o jogo.
-p) Ao final do jogo, ou ao sair dele, deverá ser dado ao jogador a opção de iniciar um novo jogo.
+p) Cada vez que o jogador entra em um aposento, deve ser indicado a ele em qual aposento ele está e quais direções ele pode seguir.
+q) Ao final do jogo, ou ao sair dele, deverá ser dado ao jogador a opção de iniciar um novo jogo.
