@@ -1,0 +1,5 @@
+- Instalaçao do Ubuntu
+--- Download da imagem - Ubuntu Desktop: https://ubuntu.com/#download
+--- Particionamento do computador - Ferramenta de particionamento do Windows
+--- Criação de um disco de boot - https://www.balena.io/etcher/
+--- Instalação do Visual Studio Code, Git e Virtualenv
