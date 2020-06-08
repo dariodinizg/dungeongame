@@ -3,6 +3,7 @@
 **Objetivo:** Desenvolvimento de um jogo de caça ao tesouro dentro de uma dungeon.
 
 **Funcionalidades:**
+
 a) O jogador deve poder escolher para onde quer ir ao escrever o comando.
 
 b) Há um tesouro que surgirá a partir do terceiro movimento do jogador e estará escondido em algum lugar aleatório do mapa que não contenha outros itens. Este local poderá ser diferente á cada novo jogo.
