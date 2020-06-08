@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    justify-content: center;
+}
+
+#terminal-screen {
+    margin:auto;
+    display: grid;
+    width: 800px;
+    height: 600px;
+    background-color: black;
+}
+
+p {
+    padding-top: 15%;
+    color: white;
+    font-size: 20pt;
+}
+
+#prompt {
+    display: flex;
+}
+
+#cursor {
+    margin-right: 10px;
+}
