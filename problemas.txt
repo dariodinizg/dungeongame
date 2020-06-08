@@ -1,0 +1,2 @@
+Orientação do usuário ao andar - como definir a frente 
+receber entrada de usuario pelo navegador - userMove
