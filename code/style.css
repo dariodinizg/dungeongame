@@ -1,0 +1,57 @@
+*{
+    margin: 0px; 
+    padding: 0px;
+}
+
+body{
+    background: white;
+    text-align: left;
+}
+
+header{
+    text-align: center;
+
+}
+
+.gamedisplay{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16pt;
+    margin-top: 5px;
+}
+
+#imagem{
+    background-color: teal;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+
+}
+#messagedisplay{
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    background-color: slategrey;
+}
+#replaydisplay{
+    text-align: center;
+    margin-top: -5px;
+    width: 500px;
+    height: 30px;
+    background-color: sandybrown;
+}
+.userinput{
+    background-color: slategrey;
+    width: 500px;
+    height: 50px;
+    text-align: left;
+    padding-top: 5px;
+    border: 0px;
+}
+
+#inputbox{
+    width: fit-content;
+    height: 40px;
+    margin-left: 5px;
+}
+
