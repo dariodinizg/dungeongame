@@ -1,0 +1,4 @@
+Orientação do usuário ao andar - como definir a frente 
+receber entrada de usuario pelo navegador - userMove
+como lidar com digitacao errada do usuario
+como lidar com uma direcao que nao existe - ok
