@@ -10,7 +10,6 @@ body{
 
 header{
     text-align: center;
-
 }
 
 .gamedisplay{
@@ -25,16 +24,15 @@ header{
     width: 500px;
     height: 500px;
     border-radius: 15px;
-
 }
 #messagedisplay{
-    text-align: center;
+    text-align: left;
     width: 500px;
     height: 30px;
     background-color: slategrey;
 }
 #replaydisplay{
-    text-align: center;
+    text-align: left;
     margin-top: -5px;
     width: 500px;
     height: 30px;
