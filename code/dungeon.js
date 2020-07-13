@@ -1,34 +1,14 @@
-let dungeonMap = {
-    room1:{
-        south: "room4",
-        west: "room2"
-    },
-    room2:{
-        south: "room5",
-        east: "room1",
-        west: "room3"
-    },
-    room5:{
-        north: "room2",
-        south: "room8",
-        east: "room4",
-        west: "room6"
-    }
-}
 
-let playerInput = "direita"
-let playerOrientation = "north"
-let currentRoom = "room1"
 
 
 
 function getPlayerOrientation(Input, Orientation){
-    /*
- escrever aqui.
-    */
-    if (playerInput === "frente") { // = recebe == semelhante === identico
-        return playerOrientation
+
+    if (Input === "frente") { // = recebe == semelhante === identico
+       
+        return Orientation
     }
+    
     
     const compass = {
         "north": { 
@@ -56,47 +36,74 @@ function getPlayerOrientation(Input, Orientation){
     return compass[Orientation][Input]
 }
 
-// console.log(getPlayerOrientation(playerInput, playerOrientation))
 
 function getRoom(current_room, player_orientation, mapdungeon){
     if (mapdungeon[current_room][player_orientation] === undefined) {
-        return "Sem saida";
+        //return "Sem saida";
+        return current_room
     }
+    
     
     return mapdungeon[current_room][player_orientation]
 
 }
 
 
-
-console.log(getRoom(currentRoom, playerOrientation, dungeonMap))
-
-
+function movePlayer(player_input, player_orientation, current_room, mapdungeon, dungeon_rooms){
+    playerOrientation = getPlayerOrientation(player_input, player_orientation)
+    currentRoom = getRoom(current_room, player_orientation, mapdungeon)
+    return dungeon_rooms[current_room]
+}
 
 const dungeonRooms = {
     room1:{
        mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
-    }
+    },
+    room2:{
+        mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
+     },
+     room3:{
+       mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
+     },
+     room4:{
+        mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
+     },
+     room5:{
+        mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
+     }
 }
 
-function movePlayer(player_input, player_orientation, current_room, mapdungeon, dungeon_rooms){
-    playerOrientation = getPlayerOrientation(player_input, player_orientation)
-    currentRoom = getRoom(current_room, player_orientation, mapdungeon)
-    // console.log(dungeon_rooms[current_room])
-    return dungeon_rooms[current_room]
-}
 
-console.log(movePlayer(playerInput, playerOrientation, currentRoom, dungeonMap, dungeonRooms)["mensage"])
 
+
+let currentRoom = "room1"
+let playerOrientation = "north"
 
 
 function setup(){
     
-    let inputBox = document.getElementById("inputbox")
-    let userInput = document.getElementsByClassName("userinput")[0]
     let keyReceiver = []
-    let messageDisplay = document.getElementById("messagedisplay")
-    let replayDisplay = document.getElementById("replaydisplay")
+    const inputBox = document.getElementById("inputbox")
+    const messageDisplay = document.getElementById("messagedisplay")
+    const replayDisplay = document.getElementById("replaydisplay")
+    
+    const dungeonMap = {
+        room1:{
+            south: "room4",
+            west: "room2"
+        },
+        room2:{
+            south: "room5",
+            east: "room1",
+            west: "room3"
+        },
+        room5:{
+            north: "room2",
+            south: "room8",
+            east: "room4",
+            west: "room6"
+        }
+    }
 
 
     document.addEventListener("keydown", key =>{
@@ -104,11 +111,15 @@ function setup(){
             keyReceiver.push(key.key)
         }
         else if (key.keyCode === 13){
-            console.log(key.keyCode)
-            messageDisplay.innerText = inputBox.innerText
             playerInput = inputBox.innerText
-            keyReceiver.length = 0
 
+            if (playerInput != ""){
+                messageDisplay.innerText = inputBox.innerText
+                console.log(currentRoom)
+                movePlayer(playerInput, playerOrientation, currentRoom, dungeonMap, dungeonRooms)
+                console.log(currentRoom)
+                keyReceiver.length = 0
+            }
         }
         else if (key.keyCode === 8){
             keyReceiver.pop()
@@ -116,7 +127,6 @@ function setup(){
         else{
             console.log(key.keyCode,"este não")
         }
-        console.log(keyReceiver)
         inputBox.innerText = keyReceiver.join("")
     })
 
