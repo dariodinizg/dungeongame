@@ -1,12 +1,9 @@
 
-
-
-
-function getPlayerOrientation(Input, Orientation){
-
-    if (Input === "frente") { // = recebe == semelhante === identico
-       
-        return Orientation
+function getPlayerOrientation(player_input, player_orientation){
+console.log(player_input, player_orientation)
+    if (player_input === "frente") { // = recebe == semelhante === identico
+       console.log(player_orientation)
+        return player_orientation
     }
     
     
@@ -32,41 +29,57 @@ function getPlayerOrientation(Input, Orientation){
             'direita': 'north',
         }
     }
-
-    return compass[Orientation][Input]
+    console.log(compass[player_orientation][player_input])
+    return compass[player_orientation][player_input]
 }
 
 
-function getRoom(current_room, player_orientation, mapdungeon){
-    if (mapdungeon[current_room][player_orientation] === undefined) {
+function getRoom(currentRoom, playerOrientation, mapdungeon){
+    if (mapdungeon[currentRoom][playerOrientation] === undefined) {
         //return "Sem saida";
-        return current_room
+        return currentRoom
     }
     
-    
-    return mapdungeon[current_room][player_orientation]
+    else{
+        console.log(currentRoom, playerOrientation)
+       // console.log(mapdungeon[current_room][playerOrientation])
+        return mapdungeon[currentRoom][playerOrientation]
+
+    }
 
 }
+
 
 
 function movePlayer(player_input, player_orientation, current_room, mapdungeon, dungeon_rooms){
+   // console.log(player_input, player_orientation, current_room, mapdungeon, dungeon_rooms)
     playerOrientation = getPlayerOrientation(player_input, player_orientation)
-    currentRoom = getRoom(current_room, player_orientation, mapdungeon)
+    //console.log(playerOrientation)
+  //  console.log(currentRoom)
+    currentRoom = getRoom(current_room, playerOrientation, mapdungeon)
+    if (getRoom(current_room, player_orientation, mapdungeon) === currentRoom) {
+        replayDisplay.innerText = "Não ha nada aqui."
+    }
+
+    else {
+        replayDisplay.innerText = dungeonRooms[currentRoom]["mensage"]
+    }
+  //  console.log(currentRoom)
     return dungeon_rooms[current_room]
 }
 
 const dungeonRooms = {
     room1:{
-       mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
+       mensage: "Você entra na torre, e ve apenas um salão vazio. Nele há duas portas."
     },
     room2:{
         mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
      },
      room3:{
-       mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
+       mensage: "Você entra em um grande salão de festas. Você percebe que este salão não ve a tempos as grandes festas do passado."
      },
      room4:{
-        mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
+        mensage: "Você entra em uma sala sem saída. As portas fecham atras de você. "
      },
      room5:{
         mensage: "Você entra em uma sala escura. O cheiro de mofo invade seus pulmões, fazendo você sentir uma leve nausea."
@@ -78,15 +91,19 @@ const dungeonRooms = {
 
 let currentRoom = "room1"
 let playerOrientation = "north"
+const replayDisplay = document.getElementById("replaydisplay")
 
 
 function setup(){
     
+    
     let keyReceiver = []
     const inputBox = document.getElementById("inputbox")
     const messageDisplay = document.getElementById("messagedisplay")
-    const replayDisplay = document.getElementById("replaydisplay")
     
+    console.log(dungeonRooms[currentRoom]["mensage"])
+    replayDisplay.innerText = dungeonRooms[currentRoom]["mensage"]
+
     const dungeonMap = {
         room1:{
             south: "room4",
@@ -119,6 +136,8 @@ function setup(){
                 movePlayer(playerInput, playerOrientation, currentRoom, dungeonMap, dungeonRooms)
                 console.log(currentRoom)
                 keyReceiver.length = 0
+
+               
             }
         }
         else if (key.keyCode === 8){

@@ -35,7 +35,7 @@ header{
     text-align: left;
     margin-top: -5px;
     width: 500px;
-    height: 30px;
+    height: auto;
     background-color: sandybrown;
 }
 .userinput{
