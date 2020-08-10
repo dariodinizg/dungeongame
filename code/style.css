@@ -17,39 +17,72 @@ header{
     margin-right: auto;
     font-size: 16pt;
     margin-top: 5px;
+    padding: 20px;
 }
-
-#imagem{
+#image{
     background-color: teal;
-    width: 500px;
-    height: 500px;
+    width: 900px;
+    height: auto;
     border-radius: 15px;
+    text-align: center;
+}
+#imagedisplay{
+    background-color: teal;
+    width: 900px;
+    height: 600px;
+    text-align: center;
+
+}
+#imgleft{
+    width: 270px;
+    height: 600px;
+    position: absolute;
+}
+#imgup{
+    width: 362px;
+    height: 277px;
+    margin-left: 270px;
+    position: absolute;
+}
+#imgdown{
+    width: 362px;
+    height: 317px;
+    position: absolute;
+    margin-left: 270px;
+    margin-top: 277px;
+}
+#imgright{
+    width: 270px;
+    height: 600px;
+    position: absolute;
+    margin-left: 632px;
 }
 #messagedisplay{
     text-align: left;
-    width: 500px;
+    width: 900px;
     height: 30px;
     background-color: slategrey;
 }
-#replaydisplay{
+#replydisplay{
     text-align: left;
     margin-top: -5px;
-    width: 500px;
+    width: 900px;
     height: auto;
     background-color: sandybrown;
+    
 }
 .userinput{
     background-color: slategrey;
-    width: 500px;
+    width: 900px;
     height: 50px;
     text-align: left;
-    padding-top: 5px;
     border: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 #inputbox{
     width: fit-content;
-    height: 40px;
-    margin-left: 5px;
+    height: 10px;
+    margin-left: 0px;
 }
-
